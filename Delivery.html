@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery | Toy HatchTopia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">Toy HatchTopia</div>
+    <nav>
+        <ul>
+            <li><a href="THT WEB FINAL.html">Home</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="cart.html">Add to Cart</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="Vouchers.html">Vouchers.</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Delivery Header -->
+<section class="delivery-header fade-in">
+    <h1>Delivery Status</h1>
+    <p>Track your order with real-time progress</p>
+</section>
+
+<!-- Delivery Card -->
+<section class="delivery-container">
+
+    <div class="delivery-card slide-up">
+        <h3>📦 Order <span id="orderId"></span></h3>
+<p><strong>Items:</strong> <span id="orderItems"></span></p>
+        <p><strong>Shipping Address:</strong><br>
+            123 Toy Street, Manila, Philippines
+        </p>
+
+        <!-- Timeline -->
+        <div class="delivery-status">
+            <div class="status done">Order Placed</div>
+            <div class="status done">Packed</div>
+            <div class="status active">Out for Delivery</div>
+            <div class="status">Delivered</div>
+        </div>
+
+        <p class="delivery-date">
+            Estimated Arrival: <strong>Tomorrow</strong>
+        </p>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Toy HatchTopia. All rights reserved.</p>
+</footer>
+
+<script>
+    const order = JSON.parse(localStorage.getItem("orderData"));
+
+    if (!order) {
+        alert("No active order found.");
+        window.location.href = "cart.html";
+    }
+
+    // Display Order ID
+    document.getElementById("orderId").textContent = order.orderId;
+
+    // Display Items
+    const itemNames = order.items.map(item =>
+        `${item.name} (x${item.quantity})`
+    ).join(", ");
+
+    document.getElementById("orderItems").textContent = itemNames;
+</script>
+
+</body>
+</html>

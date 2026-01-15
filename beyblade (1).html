@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beyblade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">Toy HatchTopia</div>
+        <nav>
+            <ul>
+                <li><a href="THT WEB FINAL.html">Home</a></li>
+                <li><a href="Notifications.html">Notifications</a></li>
+                <li><a href="cart.html">Add to Cart</a></li>
+                <li><a href="Delivery.html">Delivery</a></li>
+                <li><a href="Vouchers.html">Vouchers</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<h1>Beyblade Collection</h1>
+
+<div class="product-grid">
+    <div class="product-card">
+        <img src="c:\Users\DECRE7\Downloads\download (2).png">
+        <h3>Beyblade Burst</h3>
+        <p>₱499</p>
+        <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+        <img src="c:\Users\DECRE7\Downloads\arena set.jfif">
+        <h3>Beyblade Arena</h3>
+        <p>₱1,999</p>
+        <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+</div>
+
+<!-- Voucher Popup -->
+<div id="voucherBox" class="voucher-popup">
+    <h3>🎟️ Available Voucher</h3>
+    <p>10% OFF Toys</p>
+    <button onclick="closeVoucher()">Apply Voucher</button>
+</div>
+
+<!-- Add to Cart Animation -->
+<div id="cartAnim" class="cart-animation">
+    ✅ Added to Cart
+</div>
+
+<script>
+function buyNow() {
+    document.getElementById("voucherBox").classList.add("show");
+    document.getElementById("cartAnim").classList.add("show");
+
+    setTimeout(() => {
+        document.getElementById("cartAnim").classList.remove("show");
+    }, 2000);
+}
+
+function closeVoucher() {
+    document.getElementById("voucherBox").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
+

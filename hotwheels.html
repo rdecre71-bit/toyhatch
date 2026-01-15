@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Wheels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header / Navbar -->
+<header>
+    <div class="logo">Toy HatchTopia</div>
+    <nav>
+        <ul>
+            <li><a href="THT WEB FINAL.html">Home</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="cart.html">Add to Cart</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="vouchers.html">Vouchers</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1 class="page-title">Hot Wheels Collection</h1>
+
+<div class="product-grid">
+
+    <!-- Product 1 -->
+    <div class="product-card">
+        <img src="c:\Users\DECRE7\Documents\racer.jfif" alt="Hot Wheels Racer">
+        <h3>Hot Wheels Racer</h3>
+        <p>₱299</p>
+        <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="c:\Users\DECRE7\Documents\how wheel track set.jfif" alt="Hot Wheels Track Set">
+        <h3>Hot Wheels Track Set</h3>
+        <p>₱1,499</p>
+        <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+    </div>
+
+</div>
+
+<!-- Voucher Popup -->
+<div id="voucherBox" class="voucher-popup">
+    <h3>🎟️ Available Voucher</h3>
+    <p>10% OFF Toys</p>
+    <button onclick="closeVoucher()">Apply Voucher</button>
+</div>
+
+<!-- Add to Cart Animation -->
+<div id="cartAnim" class="cart-animation">
+    ✅ Added to Cart
+</div>
+
+<script>
+function buyNow() {
+    document.getElementById("voucherBox").classList.add("show");
+    document.getElementById("cartAnim").classList.add("show");
+
+    setTimeout(() => {
+        document.getElementById("cartAnim").classList.remove("show");
+    }, 2000);
+}
+
+function closeVoucher() {
+    document.getElementById("voucherBox").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
